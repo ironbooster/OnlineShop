@@ -1,19 +1,19 @@
-package com.example.drehimagazin.repository.entities;
+package com.example.drehimagazin.web.model.entities;
 
-import com.example.drehimagazin.repository.enums.ClothType;
+import com.example.drehimagazin.repository.enums.ClothesType;
 import com.example.drehimagazin.repository.enums.Sizes;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="clothes")
-public class ClothEntity {
+public class ClothesEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Enumerated(EnumType.STRING)
-    private ClothType clothType;
+    private ClothesType clothesType;
     @Enumerated(EnumType.STRING)
     private Sizes size;
     private double price;
@@ -23,36 +23,36 @@ public class ClothEntity {
     private BrandEntity brand;
 
 
-    public ClothType getClothType() {
-        return clothType;
+    public ClothesType getClothesType() {
+        return clothesType;
     }
 
-    public ClothEntity setClothType(ClothType clothType) {
-        this.clothType = clothType;
+    public ClothesEntity setClothesType(ClothesType clothesType) {
+        this.clothesType = clothesType;
         return this;
     }
 
-    public ClothEntity setId(Long id) {
+    public ClothesEntity setId(Long id) {
         this.id = id;
         return this;
     }
 
-    public ClothEntity setSize(Sizes size) {
+    public ClothesEntity setSize(Sizes size) {
         this.size = size;
         return this;
     }
 
-    public ClothEntity setPrice(double price) {
+    public ClothesEntity setPrice(double price) {
         this.price = price;
         return this;
     }
 
-    public ClothEntity setImageURL(String imageURL) {
+    public ClothesEntity setImageURL(String imageURL) {
         this.imageURL = imageURL;
         return this;
     }
 
-    public ClothEntity setBrand(BrandEntity brand) {
+    public ClothesEntity setBrand(BrandEntity brand) {
         this.brand = brand;
         return this;
     }

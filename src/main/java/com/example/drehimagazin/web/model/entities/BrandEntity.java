@@ -1,4 +1,4 @@
-package com.example.drehimagazin.repository.entities;
+package com.example.drehimagazin.web.model.entities;
 
 import javax.persistence.*;
 
