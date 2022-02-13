@@ -6,5 +6,17 @@
 </head>
 <body>
 
+
+        <table th:each="brand: ${bbb}">
+            <tr>
+                <th th:text="${brand.getBrand()}">Brand name</th>
+            </tr>
+            <tr>
+                <th><a th:href="${brand.getBrand()}"><img alt="image" th:src="${brand.imageURL}"
+                         class="img-thumbnail rounded"></a></th>
+            </tr>
+        </table>
+
+
 </body>
 </html>

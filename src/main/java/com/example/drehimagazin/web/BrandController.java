@@ -18,7 +18,7 @@ public class BrandController {
 
     @GetMapping("/all")
     public String allBrands(Model model) {
-        model.addAttribute("brands", brandService.getAllBrands());
+        model.addAttribute("bbb", brandService.getAllBrands());
         return "brands";
     }
 

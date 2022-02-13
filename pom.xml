@@ -40,6 +40,18 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper-module-jsr310</artifactId>
+            <version>1.2.2</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper-module-java8</artifactId>
+            <version>1.2.2</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>

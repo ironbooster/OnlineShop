@@ -15,12 +15,12 @@ public class BrandViewModel {
         return this;
     }
 
-    public BrandViewModel setName(String brand) {
+    public BrandViewModel setBrand(String brand) {
         this.brand = brand;
         return this;
     }
 
-    public String getName() {
+    public String getBrand() {
         return brand;
     }
 }
