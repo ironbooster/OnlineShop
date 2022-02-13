@@ -12,7 +12,17 @@ public class BrandEntity {
 
     @Column(unique = true, nullable = false)
     private String brand;
+    private String imageURL;
 
+
+    public BrandEntity setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+        return this;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
 
     public BrandEntity setId(Long id) {
         this.id = id;
