@@ -3,16 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        body {margin:0;}
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        li {
+            /*font-family: 'Gruppo';*/
+            /*font-size: 22px;*/
+            float: left;
+            font-family: 'Courier New', monospace;
+            font-size: 17px;
+            margin-left: 50px;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        a.active {
+            background-color: #111;
+        }
+    </style>
 </head>
 <body>
+<ul>
+    <li><a  href="/">Home</a></li>
+    <li><a href="/brands/all" class="active">Brands</a></li>
+    <li><a href="#contact">Accesories</a></li>
+    <li><a href="#about">About</a></li>
+    <li style="float:right; font-weight: bold;"><a href="/user/register">Register</a></li>
+    <li style="float:right; font-weight: bold;"><a href="/user/login">Log in</a></li>
+</ul>
 
-
-        <table th:each="brand: ${bbb}">
+        <table style="float: left;margin-top: 50px" th:each="brand: ${bbb}">
             <tr>
                 <th th:text="${brand.getBrand()}">Brand name</th>
             </tr>
             <tr>
-                <th><a th:href="${brand.getBrand()}"><img alt="image" th:src="${brand.imageURL}"
+                <th><a th:href="${brand.getBrand()}"><img style="max-block-size:250px" alt="image" th:src="${brand.imageURL}"
                          class="img-thumbnail rounded"></a></th>
             </tr>
         </table>

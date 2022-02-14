@@ -1,10 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;
+            background-color: ghostwhite;}
+        form {border: 3px solid #f1f1f1;}
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        li {
+            float: left;
+            font-family: 'Courier New', monospace;
+            font-size: 17px;
+            margin-left: 50px;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #111;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #111;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+
+    </style>
 </head>
 <body>
+<ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/brands/all">Brands</a></li>
+    <li><a href="#contact">Accesories</a></li>
+    <li><a href="#about">About</a></li>
+    <li style="float:right; font-weight: bold;"><a href="/user/register">Register</a></li>
+    <li class="active" style="float:right; font-weight: bold;"><a href="/user/login">Log in</a></li>
+
+</ul>
+
+<h2 style="text-align: center;margin-top: 70px">Log in</h2>
+
+<form action="" method="post">
+        <img style="width:300px;display:block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  " th:src="@{/img/logo.png}" alt="Logo" >
+
+    <div class="container">
+        <label><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button type="submit">Login</button>
+    </div>
+
+
+</form>
 
 </body>
 </html>
