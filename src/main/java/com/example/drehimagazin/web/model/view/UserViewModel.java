@@ -1,5 +1,10 @@
 package com.example.drehimagazin.web.model.view;
 
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+
 public class UserViewModel {
 
     private String email;
@@ -28,16 +33,16 @@ public class UserViewModel {
         this.imageUrl = imageUrl;
         return this;
     }
-
+    @Email(message = "enter valid email address")
     public String getEmail() {
         return email;
     }
 
-
+     @Length(min=2,message ="username length minimum 2 characters")
     public String getUsername() {
         return username;
     }
-
+@NotNull
     public String getPassword() {
         return password;
     }
