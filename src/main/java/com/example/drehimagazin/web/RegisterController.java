@@ -1,6 +1,8 @@
 package com.example.drehimagazin.web;
 
-import com.example.drehimagazin.web.model.servicemodel.UserServiceViewModel;
+import com.example.drehimagazin.service.impl.UserServiceImpl;
+import com.example.drehimagazin.web.model.servicemodel.UserRegisterServiceModel;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,8 +16,11 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("/user")
 public class RegisterController {
+     private final UserServiceImpl userService;
 
-
+    public RegisterController(UserServiceImpl userService, ModelMapper modelMapper) {
+        this.userService = userService;
+    }
 
     @GetMapping("/register")
     public String register(){
@@ -23,13 +28,13 @@ public class RegisterController {
 }
 
     @PostMapping("/register")
-    public String registration(@Valid @ModelAttribute UserServiceViewModel userViewModel,
+    public String registration(@Valid @ModelAttribute UserRegisterServiceModel userViewModel,
                                BindingResult bindingResult,
                                RedirectAttributes attributes){
         if (bindingResult.hasErrors()){
             return "redirect:register";
         }
-
+        userService.registerUser(userViewModel);
         return "redirect:/user/login";
     }
 }
