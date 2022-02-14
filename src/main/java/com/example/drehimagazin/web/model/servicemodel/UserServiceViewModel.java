@@ -1,48 +1,48 @@
-package com.example.drehimagazin.web.model.view;
+package com.example.drehimagazin.web.model.servicemodel;
 
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
-public class UserViewModel {
+public class UserServiceViewModel {
 
+    @Email(message = "enter valid email address")
     private String email;
+    @Length(min=2,message ="username length minimum 2 characters")
     private String username;
+    @NotNull
     private String password;
     private String imageUrl;
 
-    public UserViewModel(){}
+    public UserServiceViewModel(){}
 
-    public UserViewModel setEmail(String email) {
+    public UserServiceViewModel setEmail(String email) {
         this.email = email;
         return this;
     }
 
-    public UserViewModel setUsername(String username) {
+    public UserServiceViewModel setUsername(String username) {
         this.username = username;
         return this;
     }
 
-    public UserViewModel setPassword(String password) {
+    public UserServiceViewModel setPassword(String password) {
         this.password = password;
         return this;
     }
 
-    public UserViewModel setImageUrl(String imageUrl) {
+    public UserServiceViewModel setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
         return this;
     }
-    @Email(message = "enter valid email address")
     public String getEmail() {
         return email;
     }
 
-     @Length(min=2,message ="username length minimum 2 characters")
     public String getUsername() {
         return username;
     }
-@NotNull
     public String getPassword() {
         return password;
     }

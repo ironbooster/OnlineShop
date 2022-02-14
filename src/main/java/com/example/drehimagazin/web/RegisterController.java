@@ -1,6 +1,6 @@
 package com.example.drehimagazin.web;
 
-import com.example.drehimagazin.web.model.view.UserViewModel;
+import com.example.drehimagazin.web.model.servicemodel.UserServiceViewModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,13 +16,14 @@ import javax.validation.Valid;
 public class RegisterController {
 
 
+
     @GetMapping("/register")
     public String register(){
     return "auth-register";
 }
 
     @PostMapping("/register")
-    public String registration(@Valid @ModelAttribute UserViewModel userViewModel,
+    public String registration(@Valid @ModelAttribute UserServiceViewModel userViewModel,
                                BindingResult bindingResult,
                                RedirectAttributes attributes){
         if (bindingResult.hasErrors()){
