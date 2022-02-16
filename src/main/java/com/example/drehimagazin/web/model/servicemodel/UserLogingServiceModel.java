@@ -2,10 +2,12 @@ package com.example.drehimagazin.web.model.servicemodel;
 
 import org.hibernate.validator.constraints.Length;
 
+import javax.validation.constraints.Size;
+
 public class UserLogingServiceModel {
-    @Length(min=2,message = "username must be minimum 2 characters")
+    @Size(min=2,message = "username must be minimum 2 characters")
     private String username;
-    @Length(min=3,message = "password must be minimum 3 characters")
+    @Size(min=3,message = "password must be minimum 3 characters")
     private String password;
 
 

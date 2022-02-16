@@ -30,7 +30,7 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String logging(@Valid@ModelAttribute UserLogingServiceModel userLogingServiceModel,
+    public String logging(@Valid @ModelAttribute UserLogingServiceModel userLogingServiceModel,
                           BindingResult bindingResult, RedirectAttributes redirectAttributes,
                           HttpSession httpSession){
         if(bindingResult.hasErrors()){
