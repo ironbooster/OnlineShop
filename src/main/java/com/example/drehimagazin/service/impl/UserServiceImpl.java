@@ -6,8 +6,13 @@ import com.example.drehimagazin.service.UserService;
 import com.example.drehimagazin.web.model.entities.UserEntity;
 import com.example.drehimagazin.web.model.servicemodel.UserLogingServiceModel;
 import com.example.drehimagazin.web.model.servicemodel.UserRegisterServiceModel;
+import net.bytebuddy.dynamic.DynamicType;
+import org.apache.catalina.User;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -24,7 +29,6 @@ public class UserServiceImpl implements UserService {
     public void registerUser(UserRegisterServiceModel userServiceViewModel){
         UserEntity user = modelMapper.map(userServiceViewModel,UserEntity.class);
         userRepositroy.save(user);
-
     }
 
     @Override

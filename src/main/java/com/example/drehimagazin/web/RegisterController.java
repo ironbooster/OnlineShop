@@ -29,7 +29,7 @@ public class RegisterController {
                                BindingResult bindingResult,
                                RedirectAttributes attributes){
         if (bindingResult.hasErrors()){
-            return "redirect:/user/register";
+                return "redirect:/user/register";
         }
         userService.registerUser(userRegisterServiceModel);
         return "redirect:/user/login";
