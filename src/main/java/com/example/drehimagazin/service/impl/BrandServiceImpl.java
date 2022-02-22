@@ -29,10 +29,8 @@ public class BrandServiceImpl implements BrandService {
         List<BrandViewModel> brandViewModels = new ArrayList<>();
         List<BrandEntity> allBrands = brandRepository.findAll();
         allBrands.forEach(be ->{
-            String brandName =  be.getBrand();
 
-           // Optional<BrandViewModel> brandViewModelOpt = find(brandViewModels);
-                BrandViewModel newBrandViewModel = new BrandViewModel();
+            BrandViewModel newBrandViewModel = new BrandViewModel();
                 modelMapper.map(be,newBrandViewModel);
                 brandViewModels.add(newBrandViewModel);
 
@@ -42,11 +40,5 @@ public class BrandServiceImpl implements BrandService {
         return brandViewModels;
     }
 
-//    private static Optional<BrandViewModel> find(List<BrandViewModel> allBrands){
-//        return allBrands.stream().findAny();
-//   }
-// private static Optional<BrandViewModel> findByName(List<BrandViewModel> allBrands, String name){
-//        return allBrands.stream().filter(b->b.getName().equals(name)).findAny();
-//    }
 
 }
